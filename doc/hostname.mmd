@@ -4,12 +4,12 @@ hostname 1.0.0
 Synopsis
 --------
 
-	CREATE EXTENSION hostname;
+    CREATE EXTENSION hostname;
 
-	SELECT hostname();
-		  hostname
-	--------------------
-	 myhost.example.com
+    SELECT hostname();
+          hostname
+    --------------------
+     myhost.example.com
 
 Description
 -----------
@@ -19,7 +19,7 @@ returns the PostgreSQL server host name. The function uses `gethostname()`
 to get the host name. If it fails, `NULL` will be returned. If you need it
 not to return `NULL`, use `COALESCE()`:
 
-	SELECT COALESCE(NULL, '[unknown]');
+    SELECT COALESCE(NULL, '[unknown]');
      coalesce  
     -----------
      [unknown]
