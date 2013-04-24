@@ -1,0 +1,5 @@
+Revision history for PostgreSQL extension hostname.
+
+1.0.0  
+      - Initial version.
+      - Based on https://wiki.postgresql.org/wiki/Pg_gethostname

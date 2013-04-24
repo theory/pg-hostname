@@ -1,0 +1,6 @@
+\set ECHO 0
+ ?column? 
+----------
+ t
+(1 row)
+
