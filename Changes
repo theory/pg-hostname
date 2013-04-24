@@ -1,6 +1,6 @@
 Revision history for PostgreSQL extension hostname.
 
-1.0.0  
+1.0.0   2013-04-24T00:20:51Z
       - Initial version.
       - Based on https://wiki.postgresql.org/wiki/Pg_gethostname
       - With many thanks to Sean Chittenden for C implementation advice and
