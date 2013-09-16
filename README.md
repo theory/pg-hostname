@@ -70,8 +70,10 @@ schema, like so:
     PGOPTIONS=--search_path=extensions psql -d mydb -f hostname.sql
 
 Dependencies
-------------
-The `hostname` data type has no dependencies other than PostgreSQL and PL/pgSQL.
+-----------
+
+The `hostname` extension requires PostgreSQL 9.0 or higher and the POSIX API,
+`<unistd.h>`.
 
 Copyright and License
 ---------------------
