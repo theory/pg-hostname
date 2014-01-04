@@ -6,6 +6,7 @@ Revision history for PostgreSQL extension hostname.
       - Changed the Makefile to read the distribution name and version from
         META.json.
       - Documented that `<unistd.h>` is required.
+      - Fixed an installation issue on PostgreSQL 9.3.2.
 
 1.0.0   2013-04-24T00:20:51Z
       - Initial version.
