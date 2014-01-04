@@ -1,6 +1,6 @@
 Revision history for PostgreSQL extension hostname.
 
-1.0.1
+1.0.1   2014-01-04T00:22:52Z
       - Fixed the Makefile to recognize the `PG_CONFIG` environment variable.
       - Fixed the Makefile to confirm to pgsql-hackers recommendations.
       - Changed the Makefile to read the distribution name and version from
