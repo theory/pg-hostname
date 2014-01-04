@@ -2,7 +2,7 @@
    "name": "hostname",
    "abstract": "Get the server host name",
    "description": "Provides a function that returns the host name of the database server.",
-   "version": "1.0.1",
+   "version": "1.0.2",
    "maintainer": "David E. Wheeler <david@justatheory.com>",
    "license": "postgresql",
    "provides": {
