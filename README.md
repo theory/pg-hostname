@@ -1,6 +1,9 @@
 hostname 1.0.1
 ==============
 
+[![PGXN version](https://badge.fury.io/pg/hostname.svg)](https://badge.fury.io/pg/hostname)
+[![Build Status](https://travis-ci.org/theory/pg-hostname.png)](https://travis-ci.org/theory/pg-hostname)
+
 This library contains a single PostgreSQL extension, `hostname`, which
 provides a function, `hostname()`, that returns the database server's host
 name:

@@ -1,6 +1,7 @@
 Revision history for PostgreSQL extension hostname.
 
 1.0.2
+      - Fixed test failure on Postgres 11.
 
 1.0.1   2014-01-04T00:22:52Z
       - Fixed the Makefile to recognize the `PG_CONFIG` environment variable.
