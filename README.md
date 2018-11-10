@@ -81,7 +81,7 @@ The `hostname` extension requires PostgreSQL 9.0 or higher and the POSIX API,
 Copyright and License
 ---------------------
 
-Copyright (c) 2013 David E. Wheeler.
+Copyright (c) 2013-2018 David E. Wheeler.
 
 This module is free software; you can redistribute it and/or modify it under
 the [PostgreSQL License](http://www.opensource.org/licenses/postgresql).
