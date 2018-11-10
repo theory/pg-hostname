@@ -1,4 +1,4 @@
-hostname 1.0.2
+hostname 1.0.3
 ==============
 
 [![PGXN version](https://badge.fury.io/pg/hostname.svg)](https://badge.fury.io/pg/hostname)
