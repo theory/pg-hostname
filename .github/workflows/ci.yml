@@ -5,12 +5,12 @@ on:
   pull_request:
     branches: ['*']
   schedule:
-    - cron:  '0 12 5 * *' # Monthly at noon on the fifth
+    - cron:  '0 12 10 * *' # Monthly at noon on the tenth
 jobs:
   build:
     strategy:
       matrix:
-        pg: [13, 12, 11, 10, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1]
+        pg: [13, 12, 11, 10, 9.6, 9.5, 9.4, 9.3, 9.2]
     name: 🐘 PostgreSQL ${{ matrix.pg }}
     runs-on: ubuntu-latest
     container:
