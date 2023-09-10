@@ -2,7 +2,6 @@
 	A PostgreSQL function for getting the hostname.
 	Based on https://wiki.postgresql.org/wiki/hostname
     With thanks to seanc on Freenode for improvements.
-
 */
 
 #include "postgres.h"

@@ -1,6 +1,6 @@
 Revision history for PostgreSQL extension hostname.
 
-1.0.3
+1.0.3   2023-09-10T16:34:04Z
       - Fixed build failure on Postgres 16
 
 1.0.2   2018-11-10T20:17:35Z
