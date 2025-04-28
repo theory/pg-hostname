@@ -1,5 +1,5 @@
 # hostname extension
 comment = 'Get the server host name'
 default_version = '1.0.0'
-module_pathname = '$libdir/hostname'
+module_pathname = 'hostname'
 relocatable = true
