@@ -140,3 +140,5 @@ limited to, the implied warranties of merchantability and fitness for a
 particular purpose. The software provided hereunder is on an "as is" basis,
 and David E. Wheeler have no obligations to provide maintenance, support,
 updates, enhancements, or modifications.
+
+  [`postgresql.conf` parameters]: https://www.postgresql.org/docs/devel/runtime-config-client.html#RUNTIME-CONFIG-CLIENT-OTHER
