@@ -1,20 +1,51 @@
 name: ✅ CI
 on:
   push:
-    branches: ['*']
+    branches: [main, wip/**]
   pull_request:
-    branches: ['*']
   schedule:
-    - cron:  '0 12 10 * *' # Monthly at noon on the tenth
+    - cron:  '0 12 5 * *' # Noon on the fifth of each month
+defaults:
+  run: { shell: bash }
 jobs:
-  build:
-    strategy:
-      matrix:
-        pg: [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, '9.0']
-    name: 🐘 PostgreSQL ${{ matrix.pg }}
+  matrix:
+    name: 📋 Generate Matrix
     runs-on: ubuntu-latest
-    container: pgxn/pgxn-tools
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
-      - run: pg-start ${{ matrix.pg }}
-      - uses: actions/checkout@v6
-      - run: pg-build-test
+      - name: Generate Matrix
+        id: matrix
+        uses: pgxn/matrix-action@v0
+        with:
+          min-version: 9.0
+          beta: true
+          deprecated: true
+          no-os: windows
+
+  build:
+    name: ${{ matrix.pg.emoji }} ${{ matrix.pg.os }}/${{ matrix.pg.arch }} 🐘 v${{ matrix.pg.version }}
+    needs: matrix
+    runs-on: ${{ matrix.pg.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        pg: ${{ fromJson(needs.matrix.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pgxn/postgres-action@v0
+        with: { version: "${{ matrix.pg.version }}" }
+      - run: make -j $(nproc)
+      - run: sudo make install
+      - run: make installcheck
+        id: test
+      - name: Show Diffs
+        if: failure() && steps.test.outcome == 'failure'
+        run: find . -name regression.diffs -exec cat {} +
+      - uses: actions/upload-artifact@v7
+        if: failure() && steps.test.outcome == 'failure'
+        with:
+          name: regression-${{ matrix.pg.os }}-${{ matrix.pg.arch }}-pg${{ matrix.pg.version }}
+          path: |
+            regression.diffs
+            results
